@@ -1,0 +1,26 @@
+language: c
+sudo: false
+env:
+  matrix:
+    - TARGET=native
+  global:
+    - QTDIR=${TRAVIS_BUILD_DIR}/qt
+    - QTPKG=qt-everywhere-opensource-src-4.8.7
+    - QTURL="http://qt.mirror.constant.com/official_releases/qt/4.8/4.8.7/${QTPKG}.tar.gz"
+cache:
+  timeout: 1000
+  directories:
+    - ${QTDIR}
+addons:
+  apt:
+    packages:
+      - libasound2-dev
+      - libudev-dev
+      - gcc-mingw-w64-i686
+      - binutils-mingw-w64-i686
+before_install:
+  - test -x ${QTDIR}/bin/qmake || ci_build/build_qt_static.sh
+script:
+  - cd ${TRAVIS_BUILD_DIR}
+  - ${QTDIR}/bin/qmake
+  - make
