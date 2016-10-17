@@ -9,11 +9,11 @@ wget "${QTURL}"
 tar zxf ${QTPKG}.tar.gz
 cd ${QTPKG}
 
-QTCOMMONOPTS="-opensource -release -static -silent -prefix ${QTDIR} -no-qt3support -no-cups -no-opengl -no-dbus -no-openssl -no-xmlpatterns -no-openvg -no-xinput -no-xkb -no-javascript-jit"
+QTCOMMONOPTS="-opensource -release -static -silent -prefix ${QTDIR} -no-qt3support -no-cups -no-opengl -no-dbus -no-openssl -no-xmlpatterns -no-openvg -no-javascript-jit"
 
 case $TARGET in
 	native)
-		QTOPTS=""
+		QTOPTS="-no-xinput -no-xkb"
 		;;
 	win32)
 		QTOPTS="-xplatform win32-g++ -device-option CROSS_COMPILE=i686-w64-mingw32-"
