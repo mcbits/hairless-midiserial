@@ -4,6 +4,14 @@ The project home page is http://projectgus.github.com/hairless-midiserial/
 
 Please see that page for information on running and using Hairless Midiserial, and downloadable compiled versions for Windows, OS X and Linux.
 
+# This fork
+
+In case you didn't notice, this is a fork of the original GitHub repo. It has been changed to enable compiling on Windows 10 with QT 5.10 and MinGW 5.3.0 (and probably other 5.x versions of one or both).
+
+The changes are quite minimal, but I haven't tested anything on Linux or Mac. Please assume that this fork won't work out of the box on those platforms. However, it may not be hard to make it work. Try it and see!
+
+Now for the rest of the original README:
+
 # Building Hairless Bridge from source
 
 (Note again, prebuilt versions *are available for download* at the above URL.)
